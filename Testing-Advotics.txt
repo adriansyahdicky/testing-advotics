@@ -1,0 +1,75 @@
+-- SOAL PERTAMA : 
+import java.util.Scanner;
+
+public class SoalPertama {
+    public static void main(String[] args){
+        Scanner in = new Scanner(System.in);
+        int bil, masukan;
+
+        System.out.print("Masukan Angka : ");
+        masukan=in.nextInt();
+        System.out.println("----------------------------------------------");
+        for (int i=1; i<=masukan; i++){
+            bil=0;
+            for (int j=1;j<=i;j++){
+                if (i%j==0){
+                    bil=bil+1;
+                }
+            }
+            if (bil==2){
+                System.out.print(i+" ");
+            }
+        }
+    }
+
+}
+
+-- SOAL KEDUA :
+
+import java.util.Scanner;
+
+public class SoalKedua {
+    public static void main(String[] args){
+        Scanner in = new Scanner(System.in);
+        System.out.print("Masukan Huruf : ");
+        String masukan=in.next();
+        System.out.println("Result Palindrome " + isPalindrome(masukan));
+    }
+
+    private static boolean isPalindrome(String str)
+    {
+        int i = 0, j = str.length() - 1;
+
+        while (i < j) {
+
+            if (str.charAt(i) != str.charAt(j))
+                return false;
+            i++;
+            j--;
+        }
+        return true;
+    }
+}
+
+
+-- SOAL KETIGA :
+
+public class SoalKetiga {
+    public static void main(String[] args){
+        int[] arr = { 1, 5, 7, -1, 5 };
+        int sum = 6;
+        getPairsCount(arr, sum);
+    }
+
+    private static void getPairsCount(int[] arr, int sum)
+    {
+
+        int count = 0;
+        for (int i = 0; i < arr.length; i++)
+            for (int j = i + 1; j < arr.length; j++)
+                if ((arr[i] + arr[j]) == sum)
+                    count++;
+
+        System.out.printf("Count of pairs is %d", count);
+    }
+}
